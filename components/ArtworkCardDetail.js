@@ -17,17 +17,15 @@ export default function ArtworkCardDetail({ objectID }) {
 
   if (!favouritesList) return null;
 
-  const [showAdded, setShowAdded] = useState(false);
-
-  const isObjectInFavourites = favouritesList.includes(objectID);
-
-  useEffect(() => {
-    setShowAdded(isObjectInFavourites);
-  }, [favouritesList, objectID]);
-
   if (!data) {
     return null;
   }
+
+  const [showAdded, setShowAdded] = useState(false);
+
+  useEffect(() => {
+    setShowAdded(favouritesList?.includes(objectID));
+  }, [favouritesList]);
 
   if (error) {
     return <Error statusCode={400} />;
