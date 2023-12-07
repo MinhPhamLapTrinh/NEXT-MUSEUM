@@ -9,13 +9,12 @@ import { addToFavourites, removeFromFavourites } from "@/lib/userData";
 export default function ArtworkCardDetail({ objectID }) {
   const [favouritesList, setFavouritesList] = useAtom(favouritesAtom);
   const [showAdded, setShowAdded] = useState(false);
-  
+
   const { data, error } = useSWR(
     objectID
       ? `https://collectionapi.metmuseum.org/public/collection/v1/objects/${objectID}`
       : null
   );
-
 
   if (!favouritesList) return null;
 
@@ -23,10 +22,10 @@ export default function ArtworkCardDetail({ objectID }) {
     return null;
   }
 
-
   useEffect(() => {
-    setShowAdded(favouritesList?.includes(objectID));
-  }, [favouritesList]);
+    const isObjectInFavourites = favouritesList.includes(objectID);
+    setShowAdded(isObjectInFavourites);
+  }, [favouritesList, objectID]);
 
   if (error) {
     return <Error statusCode={400} />;
