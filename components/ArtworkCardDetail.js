@@ -14,14 +14,16 @@ export default function ArtworkCardDetail({ objectID }) {
   );
 
   const [favouritesList, setFavouritesList] = useAtom(favouritesAtom);
-  
+
   if (!favouritesList) return null;
 
   const [showAdded, setShowAdded] = useState(false);
 
+  const isObjectInFavourites = favouritesList.includes(objectID);
+
   useEffect(() => {
-    setShowAdded(favouritesList?.includes(objectID));
-  }, [favouritesList]);
+    setShowAdded(isObjectInFavourites);
+  }, [favouritesList, objectID]);
 
   if (!data) {
     return null;

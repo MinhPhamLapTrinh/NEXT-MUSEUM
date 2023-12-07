@@ -30,16 +30,16 @@ export default function RouteGuard(props) {
     return () => {
       router.events.off("routeChangeComplete", authCheck);
     };
-  }, []);
+  }, [router.pathname, router.events, authCheck, updateAtoms]);
 
   function authCheck(url) {
     const path = url.split("?")[0];
     if (!isAuthenticated() && !PUBLIC_PATHS.includes(path)) {
-        setAuthorized(false);
-        router.push('/login');
-      } else {
-        setAuthorized(true);
-      }
+      setAuthorized(false);
+      router.push("/login");
+    } else {
+      setAuthorized(true);
+    }
   }
 
   return <>{authorized && props.children}</>;
