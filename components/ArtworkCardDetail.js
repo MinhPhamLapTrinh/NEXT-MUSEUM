@@ -23,6 +23,9 @@ export default function ArtworkCardDetail({ objectID }) {
   }
 
   useEffect(() => {
+    if (!favouritesList || !data) {
+      return null; // Early return here if needed
+    }
     const isObjectInFavourites = favouritesList.includes(objectID);
     setShowAdded(isObjectInFavourites);
   }, [favouritesList, objectID]);
