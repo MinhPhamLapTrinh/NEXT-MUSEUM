@@ -7,13 +7,15 @@ import { useState, useEffect } from "react";
 import { Button } from "react-bootstrap";
 import { addToFavourites, removeFromFavourites } from "@/lib/userData";
 export default function ArtworkCardDetail({ objectID }) {
+  const [favouritesList, setFavouritesList] = useAtom(favouritesAtom);
+  const [showAdded, setShowAdded] = useState(false);
+  
   const { data, error } = useSWR(
     objectID
       ? `https://collectionapi.metmuseum.org/public/collection/v1/objects/${objectID}`
       : null
   );
 
-  const [favouritesList, setFavouritesList] = useAtom(favouritesAtom);
 
   if (!favouritesList) return null;
 
@@ -21,7 +23,6 @@ export default function ArtworkCardDetail({ objectID }) {
     return null;
   }
 
-  const [showAdded, setShowAdded] = useState(false);
 
   useEffect(() => {
     setShowAdded(favouritesList?.includes(objectID));
