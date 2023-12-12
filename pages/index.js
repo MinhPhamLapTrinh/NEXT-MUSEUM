@@ -28,6 +28,9 @@ export default function Home() {
         </Row>
         <br />
         <Row>
+          <Col>
+            <h1>Museum</h1>
+          </Col>
           <Col md={6}>
             <p>
               The Metropolitan Museum of Art of New York City, colloquially &quot;the
