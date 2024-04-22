@@ -3,7 +3,7 @@ import { useState } from "react";
 import { registerUser } from "../lib/authenticate";
 import { useRouter } from "next/router";
 
-export default function Register(props) {
+export default function Register() {
   const [warning, setWarning] = useState("");
   const [user, setUser] = useState("");
   const [password, setPassword] = useState("");
