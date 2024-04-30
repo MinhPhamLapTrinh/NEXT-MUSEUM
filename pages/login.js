@@ -22,7 +22,7 @@ export default function Login(props) {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    setIsLoading(true)
+    setIsLoading(true);
     try {
       await authenticateUser(user, password);
       await updateAtoms();
@@ -30,7 +30,7 @@ export default function Login(props) {
     } catch (err) {
       setWarning(err.message);
     }
-    setIsLoading(false)
+    setIsLoading(false);
   }
 
   return (
