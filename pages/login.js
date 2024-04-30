@@ -20,6 +20,7 @@ export default function Login(props) {
     setSearchHistory(await getHistory());
   }
 
+  
   async function handleSubmit(e) {
     e.preventDefault();
     setIsLoading(true);
