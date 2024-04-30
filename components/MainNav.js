@@ -18,6 +18,8 @@ export default function MainNav() {
   const [searchHistory, setSearchHistory] = useAtom(searchHistoryAtom);
   const router = useRouter();
 
+  const today = new Date();
+
   let token = readToken();
 
   async function submitForm(e) {
@@ -44,7 +46,7 @@ export default function MainNav() {
         expanded={isExpanded}
       >
         <Container>
-          <Navbar.Brand>Duc Minh Pham</Navbar.Brand>
+          <Navbar.Brand>The Met</Navbar.Brand>
           <Navbar.Toggle
             aria-controls="basic-navbar-nav"
             onClick={(e) => {
@@ -98,6 +100,7 @@ export default function MainNav() {
                           setExpanded(false);
                         }}
                         active={router.pathname === "/favourites"}
+                        className="p-2"
                       >
                         Favourites
                       </NavDropdown.Item>
@@ -108,6 +111,7 @@ export default function MainNav() {
                           setExpanded(false);
                         }}
                         active={router.pathname === "/history"}
+                        className="p-2"
                       >
                         Search History
                       </NavDropdown.Item>
@@ -116,6 +120,7 @@ export default function MainNav() {
                       <NavDropdown.Item
                         onClick={logout}
                         active={router.pathname === "/"}
+                        className="p-2"
                       >
                         Logout
                       </NavDropdown.Item>

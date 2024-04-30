@@ -6,6 +6,7 @@ import { favouritesAtom } from "@/store";
 import { useState, useEffect } from "react";
 import { Button } from "react-bootstrap";
 import { addToFavourites, removeFromFavourites } from "@/lib/userData";
+
 export default function ArtworkCardDetail({ objectID }) {
   const [favouritesList, setFavouritesList] = useAtom(favouritesAtom);
   const [showAdded, setShowAdded] = useState(false);

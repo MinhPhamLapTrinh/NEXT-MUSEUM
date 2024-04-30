@@ -1,12 +1,12 @@
 /*********************************************************************************
-*  WEB422 – Assignment 6
-*  I declare that this assignment is my own work in accordance with Seneca Academic Policy.  
-*  No part of this assignment has been copied manually or electronically from any other source
-*  (including web sites) or distributed to other students.
-* 
-*  Name: Duc Minh, Pham Student ID: 103055224 Date: December 08, 2023
-*
-********************************************************************************/ 
+ *  WEB422 – Assignment 6
+ *  I declare that this assignment is my own work in accordance with Seneca Academic Policy.
+ *  No part of this assignment has been copied manually or electronically from any other source
+ *  (including web sites) or distributed to other students.
+ *
+ *  Name: Duc Minh, Pham Student ID: 103055224 Date: December 08, 2023
+ *
+ ********************************************************************************/
 
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
@@ -22,26 +22,24 @@ export default function Home() {
               alt="museum_picture"
               width="100%"
               src="https://upload.wikimedia.org/wikipedia/commons/3/30/Metropolitan_Museum_of_Art_%28The_Met%29_-_Central_Park%2C_NYC.jpg"
-              rounded
+              className="shadow-lg rounded"
             />
           </Col>
         </Row>
         <br />
         <Row>
-          <Col>
-            <h1>Museum</h1>
-          </Col>
           <Col md={6}>
             <p>
-              The Metropolitan Museum of Art of New York City, colloquially &quot;the
-              Met&quot;, is the largest art museum in the Americas. Its permanent
-              collection contains over two million works, divided among 17
-              curatorial departments. The main building at 1000 Fifth Avenue,
-              along the Museum Mile on the eastern edge of Central Park on
-              Manhattan&apos;s Upper East Side, is by area one of the world&apos;s largest
-              art museums. A much smaller second location, The Cloisters at Fort
-              Tryon Park in Upper Manhattan, contains an extensive collection of
-              art, architecture, and artifacts from medieval Europe.
+              The Metropolitan Museum of Art of New York City, colloquially
+              &quot;the Met&quot;, is the largest art museum in the Americas.
+              Its permanent collection contains over two million works, divided
+              among 17 curatorial departments. The main building at 1000 Fifth
+              Avenue, along the Museum Mile on the eastern edge of Central Park
+              on Manhattan&apos;s Upper East Side, is by area one of the
+              world&apos;s largest art museums. A much smaller second location,
+              The Cloisters at Fort Tryon Park in Upper Manhattan, contains an
+              extensive collection of art, architecture, and artifacts from
+              medieval Europe.
             </p>
           </Col>
           <br />
